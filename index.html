@@ -402,28 +402,31 @@
 </nav>
 
 <script>
-  // Waitlist form handler
-  // Replace this with your actual endpoint (Cloudflare Worker, ConvertKit, Mailchimp, etc.)
   const form = document.getElementById('waitlistForm');
   const success = document.getElementById('formSuccess');
+  const submitBtn = form.querySelector('button');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = form.querySelector('input[name="email"]').value;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
 
-    // ── PLACEHOLDER: Replace with your actual API endpoint ──
-    // Example Cloudflare Worker endpoint:
-    // await fetch('https://waitlist.vexeralabs.com/api/subscribe', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ email })
-    // });
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
 
-    // For now, log to console and show success
-    console.log('Waitlist signup:', email);
+      if (!res.ok) throw new Error('Failed');
 
-    form.style.display = 'none';
-    success.classList.add('visible');
+      form.style.display = 'none';
+      success.classList.add('visible');
+    } catch (err) {
+      submitBtn.textContent = 'Try again';
+      submitBtn.disabled = false;
+    }
   });
 </script>
 </body>
