@@ -1,4 +1,4 @@
-const WELCOME_EMAIL_HTML = `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
@@ -15,22 +15,28 @@ const WELCOME_EMAIL_HTML = `<!DOCTYPE html>
   </style>
 </head>
 <body style="margin: 0; padding: 0; background-color: #08080a; -webkit-font-smoothing: antialiased;">
-  <div style="display:none;max-height:0;overflow:hidden;">We'll reach out when it's time to wake up.</div>
-  <div style="display:none;max-height:0;overflow:hidden;">&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
+
   <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #08080a;">
     <tr>
       <td align="center" style="padding: 40px 16px;">
+
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="560" style="max-width: 560px; width: 100%;">
+
+          <!-- Brand -->
           <tr>
             <td align="center" style="padding: 32px 0 60px 0; font-family: 'Space Mono', 'Courier New', monospace; font-size: 11px; font-weight: 700; letter-spacing: 6px; text-transform: uppercase; color: #6b6b76;">
               VEXERA LABS
             </td>
           </tr>
+
+          <!-- Main card -->
           <tr>
             <td align="center" style="padding: 0 20px;">
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #0e0e12; border: 1px solid #1e1e24; border-radius: 16px; overflow: hidden;">
                 <tr>
                   <td style="padding: 60px 44px 56px 44px;">
+
+                    <!-- Headline -->
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                       <tr>
                         <td style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-size: 36px; font-weight: 200; line-height: 1.2; color: #e8e8ec; text-align: center; padding-bottom: 16px;">
@@ -38,6 +44,8 @@ const WELCOME_EMAIL_HTML = `<!DOCTYPE html>
                         </td>
                       </tr>
                     </table>
+
+                    <!-- Subline -->
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                       <tr>
                         <td style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-size: 15px; font-weight: 300; line-height: 1.8; color: #6b6b76; text-align: center; padding-bottom: 44px;">
@@ -45,11 +53,15 @@ const WELCOME_EMAIL_HTML = `<!DOCTYPE html>
                         </td>
                       </tr>
                     </table>
+
+                    <!-- Short divider -->
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
                       <tr>
                         <td style="width: 48px; border-top: 1px solid #1e1e24; font-size: 0; line-height: 0;">&nbsp;</td>
                       </tr>
                     </table>
+
+                    <!-- Tagline -->
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                       <tr>
                         <td style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; font-weight: 300; line-height: 1.8; color: #9494a0; text-align: center; padding-top: 44px;">
@@ -57,11 +69,14 @@ const WELCOME_EMAIL_HTML = `<!DOCTYPE html>
                         </td>
                       </tr>
                     </table>
+
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
+
+          <!-- Socials -->
           <tr>
             <td align="center" style="padding: 48px 0 0 0;">
               <table role="presentation" cellspacing="0" cellpadding="0" border="0">
@@ -73,110 +88,36 @@ const WELCOME_EMAIL_HTML = `<!DOCTYPE html>
                     <a href="https://x.com/vexeralabs" target="_blank" style="font-family: 'Space Mono', 'Courier New', monospace; font-size: 9px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: #6b6b76; text-decoration: none;">X</a>
                   </td>
                   <td style="padding: 0 14px;">
+                    <a href="https://tiktok.com/@vexeralabs" target="_blank" style="font-family: 'Space Mono', 'Courier New', monospace; font-size: 9px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: #6b6b76; text-decoration: none;">TikTok</a>
+                  </td>
+                  <td style="padding: 0 14px;">
                     <a href="https://linkedin.com/company/vexeralabs" target="_blank" style="font-family: 'Space Mono', 'Courier New', monospace; font-size: 9px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: #6b6b76; text-decoration: none;">LinkedIn</a>
                   </td>
+
                 </tr>
               </table>
             </td>
           </tr>
+
+          <!-- Footer -->
           <tr>
             <td style="padding: 32px 40px 20px 40px; text-align: center;">
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <tr>
                   <td style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 300; color: #2a2a30; text-align: center; line-height: 1.8;">
-                    Vexera Labs · Belgium
+                    Vexera Labs
+                    <br>
+                    <a href="{$unsubscribe}" style="color: #3a3a42; text-decoration: underline;">Unsubscribe</a>
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
+
         </table>
       </td>
     </tr>
   </table>
+
 </body>
-</html>`;
-
-export async function onRequestPost(context) {
-    const corsHeaders = {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "POST, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type",
-    };
-
-    try {
-        const { email } = await context.request.json();
-
-        if (!email || !email.includes("@")) {
-            return new Response(JSON.stringify({ error: "Invalid email" }), {
-                status: 400,
-                headers: { "Content-Type": "application/json", ...corsHeaders },
-            });
-        }
-
-        const resendHeaders = {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${context.env.MAIL_API_KEY}`,
-        };
-
-        // 1. Save to KV as backup
-        await context.env.WAITLIST.put(email, JSON.stringify({
-            email,
-            signedUpAt: new Date().toISOString(),
-        }));
-
-        // 2. Add contact to Resend audience
-        await fetch("https://api.resend.com/audiences/bea1b7cd-b69b-490d-97b7-d85bc7419697/contacts", {
-            method: "POST",
-            headers: resendHeaders,
-            body: JSON.stringify({
-                email,
-                unsubscribed: false,
-            }),
-        });
-
-        // 3. Send welcome email
-        await fetch("https://api.resend.com/emails", {
-            method: "POST",
-            headers: resendHeaders,
-            body: JSON.stringify({
-                from: "Vexera Labs <hello@vexeralabs.com>",
-                to: email,
-                subject: "You're in.",
-                html: WELCOME_EMAIL_HTML,
-            }),
-        });
-
-        // 4. Notify you about the new signup
-        await fetch("https://api.resend.com/emails", {
-            method: "POST",
-            headers: resendHeaders,
-            body: JSON.stringify({
-                from: "Vexera Labs <hello@vexeralabs.com>",
-                to: "hello@vexeralabs.com",
-                subject: `New waitlist signup: ${email}`,
-                html: `<p>New signup: <strong>${email}</strong></p><p>${new Date().toISOString()}</p>`,
-            }),
-        });
-
-        return new Response(JSON.stringify({ success: true }), {
-            status: 200,
-            headers: { "Content-Type": "application/json", ...corsHeaders },
-        });
-    } catch (err) {
-        return new Response(JSON.stringify({ error: "Something went wrong" }), {
-            status: 500,
-            headers: { "Content-Type": "application/json", ...corsHeaders },
-        });
-    }
-}
-
-export async function onRequestOptions() {
-    return new Response(null, {
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "POST, OPTIONS",
-            "Access-Control-Allow-Headers": "Content-Type",
-        },
-    });
-}
+</html>
