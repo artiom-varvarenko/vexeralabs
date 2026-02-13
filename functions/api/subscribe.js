@@ -1,102 +1,3 @@
-const WELCOME_EMAIL_HTML = `<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="color-scheme" content="dark">
-  <meta name="supported-color-schemes" content="dark">
-  <title>Vexera Labs</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600&family=Space+Mono:wght@400;700&display=swap');
-    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
-    body { margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #08080a; }
-  </style>
-</head>
-<body style="margin: 0; padding: 0; background-color: #08080a; -webkit-font-smoothing: antialiased;">
-  <div style="display:none;max-height:0;overflow:hidden;">We'll reach out when it's time to wake up.</div>
-  <div style="display:none;max-height:0;overflow:hidden;">&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>
-  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #08080a;">
-    <tr>
-      <td align="center" style="padding: 40px 16px;">
-        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="560" style="max-width: 560px; width: 100%;">
-          <tr>
-            <td align="center" style="padding: 32px 0 60px 0; font-family: 'Space Mono', 'Courier New', monospace; font-size: 11px; font-weight: 700; letter-spacing: 6px; text-transform: uppercase; color: #6b6b76;">
-              VEXERA LABS
-            </td>
-          </tr>
-          <tr>
-            <td align="center" style="padding: 0 20px;">
-              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #0e0e12; border: 1px solid #1e1e24; border-radius: 16px; overflow: hidden;">
-                <tr>
-                  <td style="padding: 60px 44px 56px 44px;">
-                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                      <tr>
-                        <td style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-size: 36px; font-weight: 200; line-height: 1.2; color: #e8e8ec; text-align: center; padding-bottom: 16px;">
-                          You're in.
-                        </td>
-                      </tr>
-                    </table>
-                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                      <tr>
-                        <td style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-size: 15px; font-weight: 300; line-height: 1.8; color: #6b6b76; text-align: center; padding-bottom: 44px;">
-                          We'll reach out when it's time to wake up.
-                        </td>
-                      </tr>
-                    </table>
-                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
-                      <tr>
-                        <td style="width: 48px; border-top: 1px solid #1e1e24; font-size: 0; line-height: 0;">&nbsp;</td>
-                      </tr>
-                    </table>
-                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                      <tr>
-                        <td style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; font-weight: 300; line-height: 1.8; color: #9494a0; text-align: center; padding-top: 44px;">
-                          Your room knows why you <span style="color: #c4f0ff;">can't sleep</span>.
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td align="center" style="padding: 48px 0 0 0;">
-              <table role="presentation" cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                  <td style="padding: 0 14px;">
-                    <a href="https://instagram.com/vexeralabs" target="_blank" style="font-family: 'Space Mono', 'Courier New', monospace; font-size: 9px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: #6b6b76; text-decoration: none;">Instagram</a>
-                  </td>
-                  <td style="padding: 0 14px;">
-                    <a href="https://x.com/vexeralabs" target="_blank" style="font-family: 'Space Mono', 'Courier New', monospace; font-size: 9px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: #6b6b76; text-decoration: none;">X</a>
-                  </td>
-                  <td style="padding: 0 14px;">
-                    <a href="https://linkedin.com/company/vexeralabs" target="_blank" style="font-family: 'Space Mono', 'Courier New', monospace; font-size: 9px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: #6b6b76; text-decoration: none;">LinkedIn</a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 32px 40px 20px 40px; text-align: center;">
-              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                <tr>
-                  <td style="font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 300; color: #2a2a30; text-align: center; line-height: 1.8;">
-                    Vexera Labs · Belgium
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>`;
-
 export async function onRequestPost(context) {
     const corsHeaders = {
         "Access-Control-Allow-Origin": "*",
@@ -125,7 +26,11 @@ export async function onRequestPost(context) {
             signedUpAt: new Date().toISOString(),
         }));
 
-        // 2. Add contact to Resend audience
+        // 2. Fetch welcome email template
+        const templateRes = await fetch(new URL("/email/welcome-email.html", context.request.url));
+        const welcomeHtml = await templateRes.text();
+
+        // 3. Add contact to Resend audience
         await fetch("https://api.resend.com/audiences/bea1b7cd-b69b-490d-97b7-d85bc7419697/contacts", {
             method: "POST",
             headers: resendHeaders,
@@ -135,7 +40,7 @@ export async function onRequestPost(context) {
             }),
         });
 
-        // 3. Send welcome email
+        // 4. Send welcome email
         await fetch("https://api.resend.com/emails", {
             method: "POST",
             headers: resendHeaders,
@@ -143,11 +48,11 @@ export async function onRequestPost(context) {
                 from: "Vexera Labs <hello@vexeralabs.com>",
                 to: email,
                 subject: "You're in.",
-                html: WELCOME_EMAIL_HTML,
+                html: welcomeHtml,
             }),
         });
 
-        // 4. Notify you about the new signup
+        // 5. Notify you about the new signup
         await fetch("https://api.resend.com/emails", {
             method: "POST",
             headers: resendHeaders,
