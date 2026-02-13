@@ -15,11 +15,21 @@ export async function onRequestPost(context) {
       });
     }
 
-    // Store in KV: key = email, value = signup timestamp
+    // Save to KV as backup
     await context.env.WAITLIST.put(email, JSON.stringify({
       email,
       signedUpAt: new Date().toISOString(),
     }));
+
+    // Send to MailerLite
+    const res = await fetch("https://connect.mailerlite.com/api/subscribers", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${context.env.MAILERLITE_API_KEY}`,
+      },
+      body: JSON.stringify({ email }),
+    });
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
