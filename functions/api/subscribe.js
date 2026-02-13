@@ -53,16 +53,16 @@ export async function onRequestPost(context) {
         });
 
         // 5. Notify you about the new signup
-        await fetch("https://api.resend.com/emails", {
-            method: "POST",
-            headers: resendHeaders,
-            body: JSON.stringify({
-                from: "Vexera Labs <hello@vexeralabs.com>",
-                to: "hello@vexeralabs.com",
-                subject: `New waitlist signup: ${email}`,
-                html: `<p>New signup: <strong>${email}</strong></p><p>${new Date().toISOString()}</p>`,
-            }),
-        });
+        // await fetch("https://api.resend.com/emails", {
+        //     method: "POST",
+        //     headers: resendHeaders,
+        //     body: JSON.stringify({
+        //         from: "Vexera Labs <hello@vexeralabs.com>",
+        //         to: "hello@vexeralabs.com",
+        //         subject: `New waitlist signup: ${email}`,
+        //         html: `<p>New signup: <strong>${email}</strong></p><p>${new Date().toISOString()}</p>`,
+        //     }),
+        // });
 
         return new Response(JSON.stringify({ success: true }), {
             status: 200,
