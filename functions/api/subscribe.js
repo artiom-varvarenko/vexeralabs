@@ -21,14 +21,34 @@ export async function onRequestPost(context) {
       signedUpAt: new Date().toISOString(),
     }));
 
-    // Send to MailerLite
-    const res = await fetch("https://connect.mailerlite.com/api/subscribers", {
+    // Send welcome email to subscriber
+    await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${context.env.MAILERLITE_API_KEY}`,
+        "Authorization": `Bearer ${context.env.MAIL_API_KEY}`,
       },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({
+        from: "Vexera Labs <hello@vexeralabs.com>",
+        to: email,
+        subject: "You're on the waitlist",
+        html: "<p>Thanks for joining the Vexera Labs waitlist.</p><p>We'll reach out when it's time to wake up.</p><p>— Vexera Labs</p>",
+      }),
+    });
+
+    // Notify you about the new signup
+    await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${context.env.MAIL_API_KEY}`,
+      },
+      body: JSON.stringify({
+        from: "Vexera Labs <hello@vexeralabs.com>",
+        to: "hello@vexeralabs.com",
+        subject: "New waitlist signup",
+        html: `<p>New signup: <strong>${email}</strong></p><p>${new Date().toISOString()}</p>`,
+      }),
     });
 
     return new Response(JSON.stringify({ success: true }), {
